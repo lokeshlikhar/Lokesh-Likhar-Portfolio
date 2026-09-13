@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
@@ -12,7 +12,7 @@ import Projects from "./components/Projects";
 import Services from "./components/Services";
 import Skills from "./components/Skills";
 
-export default function App() {
+function Layout() {
   const [dark, setDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -48,26 +48,27 @@ export default function App() {
         onCloseMenu={() => setMenuOpen(false)}
       />
       <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <About />
-                <Skills />
-                <Experience />
-                <Projects />
-                <Education />
-                <Services />
-                <Contact />
-              </>
-            }
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Outlet />
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<><Hero /><About /><Skills /><Experience /><Projects /><Education /><Services /><Contact /></>} />
+        <Route path="experience" element={<><Hero /><About /><Skills /><Experience /><Projects /><Education /><Services /><Contact /></>} />
+        <Route path="skills" element={<><Hero /><About /><Skills /><Experience /><Projects /><Education /><Services /><Contact /></>} />
+        <Route path="contact" element={<><Hero /><About /><Skills /><Experience /><Projects /><Education /><Services /><Contact /></>} />
+        <Route path="about" element={<><Hero /><About /><Skills /><Experience /><Projects /><Education /><Services /><Contact /></>} />
+        <Route path="projects" element={<><Hero /><About /><Skills /><Experience /><Projects /><Education /><Services /><Contact /></>} />
+        <Route path="education" element={<><Hero /><About /><Skills /><Experience /><Projects /><Education /><Services /><Contact /></>} />
+        <Route path="services" element={<><Hero /><About /><Skills /><Experience /><Projects /><Education /><Services /><Contact /></>} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }

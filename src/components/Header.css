@@ -27,7 +27,7 @@
 .brand-name {
   margin-left: 0.5rem;
 }
-.desktop-nav a {
+.desktop-nav .nav-link {
   font-size: 0.75rem;
   font-weight: 700;
   text-decoration: none;
@@ -36,8 +36,12 @@
   transition:
     background 0.2s,
     color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
 }
-.desktop-nav a:hover {
+.desktop-nav .nav-link:hover {
   background: var(--accent);
   color: var(--primary);
 }
@@ -60,13 +64,19 @@
     background: var(--bg);
     animation: menu-open 0.18s ease-out;
   }
-  .mobile-nav a {
+  .mobile-nav .nav-link {
     padding: 0.75rem 0;
     text-decoration: none;
     font-weight: 700;
     border-bottom: 1px solid var(--border);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    text-align: left;
+    width: 100%;
   }
-  .mobile-nav a:last-child {
+  .mobile-nav .nav-link:last-child {
     border-bottom: 0;
   }
 }

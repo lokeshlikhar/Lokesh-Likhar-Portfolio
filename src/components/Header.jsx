@@ -1,4 +1,5 @@
 import { Menu, Moon, Sun } from "lucide-react";
+import { Link } from "react-router-dom";
 import { navItems } from "../data/portfolio";
 import "./Header.css";
 
@@ -9,18 +10,26 @@ export default function Header({
   onOpenMenu,
   onCloseMenu,
 }) {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    onCloseMenu();
+  };
+
   return (
     <header className="site-header">
       <div className="container header-content">
-        <a className="brand" href="#home" onClick={onCloseMenu}>
+        <Link className="brand" to="/" onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); onCloseMenu(); }}>
           <span className="brand-name">Lokesh Likhar</span>
-        </a>
+        </Link>
         <div className="header-actions">
           <nav className="desktop-nav">
             {navItems.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`}>
+              <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="nav-link">
                 {item}
-              </a>
+              </button>
             ))}
           </nav>
           <button
@@ -48,9 +57,9 @@ export default function Header({
           aria-label="Mobile navigation"
         >
           {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} onClick={onCloseMenu}>
+            <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="nav-link">
               {item}
-            </a>
+            </button>
           ))}
         </nav>
       )}

@@ -3,6 +3,13 @@ import SocialLink from "./SocialLink";
 import "./Hero.css";
 
 export default function Hero() {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="home" className="hero">
       <div className="container hero-grid">
@@ -21,12 +28,12 @@ export default function Hero() {
             product experiences that solve real-world problems.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#projects">
+            <button className="button button-primary" onClick={() => scrollToSection("projects")}>
               View Projects <ArrowRight />
-            </a>
-            <a className="button button-outline" href="#contact">
+            </button>
+            <button className="button button-outline" onClick={() => scrollToSection("contact")}>
               Contact Me
-            </a>
+            </button>
           </div>
           <div className="hero-social-links" aria-label="Social links">
             <SocialLink href="https://github.com/lokeshlikhar" label="GitHub">
