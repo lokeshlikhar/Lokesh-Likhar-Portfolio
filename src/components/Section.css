@@ -1,0 +1,27 @@
+.section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 4rem;
+}
+.muted-section {
+  background: color-mix(in srgb, var(--soft) 65%, transparent);
+}
+.section h2 {
+  max-width: 48rem;
+  margin: 0.75rem 0 3rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+.eyebrow {
+  display: block;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+@media (max-width: 600px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}

@@ -1,0 +1,35 @@
+.education {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+.education > svg {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary);
+}
+.education h3 {
+  margin: 0;
+}
+.education p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.education > div:last-child {
+  text-align: right;
+}
+.education > div:last-child p {
+  color: var(--primary);
+}
+@media (max-width: 600px) {
+  .education {
+    grid-template-columns: auto 1fr;
+  }
+  .education > div:last-child {
+    grid-column: 2;
+    text-align: left;
+  }
+}

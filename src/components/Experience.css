@@ -1,0 +1,32 @@
+.experience {
+  border-left: 2px solid var(--primary);
+  padding-left: 2rem;
+}
+.experience h3 {
+  margin: 0;
+}
+.experience b {
+  color: var(--primary);
+}
+.experience time {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.7rem;
+  background: var(--soft);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.experience ul {
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+.experience li {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0.6rem 0;
+}
+.experience li svg {
+  color: var(--primary);
+  margin-top: 0.15rem;
+}

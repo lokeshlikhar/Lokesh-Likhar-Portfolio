@@ -1,0 +1,39 @@
+footer {
+  padding: 2.5rem 0;
+  background: var(--text);
+  color: var(--bg);
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-content b {
+  font-size: 1.05rem;
+}
+.footer-content p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  opacity: 0.72;
+}
+.footer-contact {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--bg) 45%, transparent);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.footer-contact:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+@media (max-width: 600px) {
+  .footer-content {
+    display: grid;
+    gap: 1.25rem;
+  }
+}

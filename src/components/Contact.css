@@ -1,0 +1,85 @@
+.contact-email {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: max-content;
+  margin-top: 1.5rem;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+.contact-email svg {
+  color: var(--primary);
+}
+.contact-email:hover {
+  color: var(--primary);
+}
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.contact-form label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.contact-form textarea {
+  height: 11.5rem;
+  min-height: 11.5rem;
+  max-height: 11.5rem;
+  resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent);
+}
+.wide {
+  grid-column: 1/-1;
+}
+.honeypot {
+  display: none;
+}
+.form-message {
+  min-height: 1.25rem;
+  margin: 0;
+  font-weight: 700;
+}
+.form-message.success {
+  color: #087a49;
+}
+.form-message.error {
+  color: #c93541;
+}
+.error-text {
+  color: #c93541;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+@media (max-width: 600px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  .wide {
+    grid-column: auto;
+  }
+}

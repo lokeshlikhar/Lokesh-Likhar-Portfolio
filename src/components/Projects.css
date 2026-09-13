@@ -1,0 +1,77 @@
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--text) 12%, transparent);
+}
+.project-card.featured {
+  border-color: var(--primary);
+  background: var(--accent);
+}
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-top > b {
+  color: var(--primary);
+}
+.project-top span {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.project-top span svg {
+  width: 0.8rem;
+}
+.project-card h3 {
+  font-size: 1.4rem;
+}
+.project-card > p,
+.project-card ul {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.project-card ul {
+  padding: 0;
+  list-style: none;
+}
+.project-card li {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0.6rem 0;
+}
+.project-card li svg {
+  color: var(--primary);
+  margin-top: 0.15rem;
+}
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
